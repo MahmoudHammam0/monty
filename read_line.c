@@ -48,7 +48,7 @@ int is_digit(char *str)
 
 	for (i = 0; str[i] != '\0'; i++)
 	{
-		if (str[i] < 48 || str[i] > 57)
+		if ((str[i] < 48 || str[i] > 57) && str[i] != 45)
 			return (-1);
 	}
 	return (1);
