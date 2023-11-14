@@ -71,6 +71,12 @@ void _pint(stack_t **stack, unsigned int line_number)
 	dprintf(1, "%d\n", ptr->n);
 }
 
+/**
+ * _pop - removes the top element of the stack.
+ * @stack: pointer to top of the stack
+ * @line_number - number of line to be executed
+ * Return: Nothing
+ */
 void _pop(stack_t **stack, unsigned int line_number)
 {
 	stack_t *ptr = *stack;
