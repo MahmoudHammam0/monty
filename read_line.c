@@ -29,7 +29,6 @@ int read_line(unsigned int line_number)
 	if (token == NULL || is_digit(token) == -1)
 	{
 		dprintf(2, "L%u: usage: push integer\n", line_number);
-		free(line), line = NULL;
 		exit(EXIT_FAILURE);
 	}
 	num = atoi(token);

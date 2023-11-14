@@ -31,8 +31,6 @@ void execute_command(char *line, stack_t **stack, unsigned int line_number)
 	if (instruction[i].opcode == NULL)
 	{
 		dprintf(2, "L%u: unknown instruction %s\n", line_number, opc);
-		free(line), line = NULL;
-		_free_stack(*stack);
 		exit(EXIT_FAILURE);
 	}
 }
