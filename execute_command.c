@@ -10,8 +10,7 @@
 void execute_command(char *line, stack_t **stack, unsigned int line_number)
 {
 	char *opc;
-	int i, data;
-
+	int i;
 	instruction_t instruction[] = {
 		{"push", _push},
 		{"pall", _pall},
@@ -21,7 +20,6 @@ void execute_command(char *line, stack_t **stack, unsigned int line_number)
 	opc = strtok(line, " \t\n");
 	if (opc == NULL || opc[0] == '#')
 		return;
-
 	for (i = 0; instruction[i].opcode != NULL; i++)
 	{
 		if (strcmp(instruction[i].opcode, opc) == 0)
@@ -29,10 +27,10 @@ void execute_command(char *line, stack_t **stack, unsigned int line_number)
 			instruction[i].f(stack, line_number);
 			return;
 		}
-		else
-		{
-			dprintf(2, "L%u: unknown instruction %s\n", line_number, opc);
-			exit(EXIT_FAILURE);
-		}
+	}
+	if (instruction[i].opcode == NULL)
+	{
+		dprintf(2, "L%u: unknown instruction %s\n", line_number, opc);
+		exit(EXIT_FAILURE);
 	}
 }
