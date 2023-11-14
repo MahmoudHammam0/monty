@@ -70,3 +70,22 @@ void _pint(stack_t **stack, unsigned int line_number)
 	}
 	dprintf(1, "%d\n", ptr->n);
 }
+
+void _pop(stack_t **stack, unsigned int line_number)
+{
+	stack_t *ptr = *stack;
+
+	if (ptr == NULL)
+	{
+		dprintf(2, "L%u: can't pop an empty stack\n", line_number);
+		exit(EXIT_FAILURE);
+	}
+	if (ptr->next == NULL)
+		(*stack) = NULL;
+	else
+	{
+		(*stack) = (*stack)->next;
+		(*stack)->prev = NULL;
+	}
+	free(ptr), ptr = NULL;
+}
