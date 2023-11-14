@@ -1,5 +1,10 @@
 #include "monty.h"
-extern char *file_name;
+
+/**
+ * read_line - reads a line and extract data from it
+ * @line_number: number of target line
+ * Return: extracted data
+ */
 int read_line(unsigned int line_number)
 {
 	FILE *f;
@@ -32,6 +37,11 @@ int read_line(unsigned int line_number)
 	return (num);
 }
 
+/**
+ * is_digit - check for digits in string
+ * @str: given string
+ * Return: 1 on success
+ */
 int is_digit(char *str)
 {
 	int i;

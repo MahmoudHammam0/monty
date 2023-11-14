@@ -46,12 +46,9 @@ void _pall(stack_t **stack, __attribute__((unused)) unsigned int line_number)
 
 	if (ptr == NULL)
 		return;
-	else
+	while (ptr != NULL)
 	{
-		while (ptr != NULL)
-		{
-			dprintf(1, "%d\n", ptr->n);
-			ptr = ptr->next;
-		}
+		dprintf(1, "%d\n", ptr->n);
+		ptr = ptr->next;
 	}
 }

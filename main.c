@@ -35,7 +35,7 @@ int main(int argc, char *argv[])
 	size_t length_line = 0;
 	stack_t *stack = NULL;
 	unsigned int line_number = 1;
-	
+
 	file_name = argv[1];
 	if (argc != 2)
 	{
