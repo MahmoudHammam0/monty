@@ -21,8 +21,25 @@ int read_line(unsigned int line_number)
 	}
 	token = strtok(line, " \t\n");
 	token = strtok(NULL, " \t\n");
+	if (token == NULL || is_digit(token) == -1)
+	{
+		dprintf(2, "L%u: usage: push integer\n", line_number);
+		exit(EXIT_FAILURE);
+	}
 	num = atoi(token);
 	free(line), line = NULL;
 	fclose(f);
 	return (num);
+}
+
+int is_digit(char *str)
+{
+	int i;
+
+	for (i = 0; str[i] != '\0'; i++)
+	{
+		if (str[i] < 48 || str[i] > 57)
+			return (-1);
+	}
+	return (1);
 }

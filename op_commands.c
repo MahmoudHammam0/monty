@@ -45,10 +45,7 @@ void _pall(stack_t **stack, __attribute__((unused)) unsigned int line_number)
 	stack_t *ptr = *stack;
 
 	if (ptr == NULL)
-	{
-		dprintf(2, "The list is empty\n");
-		exit(EXIT_FAILURE);
-	}
+		return;
 	else
 	{
 		while (ptr != NULL)
