@@ -45,5 +45,6 @@ void _pall(stack_t **stack, unsigned int line_number);
 int read_line(unsigned int line_number);
 void _free_stack(stack_t *stack);
 int is_digit(char *str);
+void _pint(stack_t **stack, unsigned int line_number);
 
 #endif

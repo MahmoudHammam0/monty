@@ -52,3 +52,21 @@ void _pall(stack_t **stack, __attribute__((unused)) unsigned int line_number)
 		ptr = ptr->next;
 	}
 }
+
+/**
+ * _pint - prints the value at the top of the stack, followed by a new line.
+ * @stack: pointer to top of the stack
+ * @line_number: number of the line to be executed
+ * Return: Nothing
+ */
+void _pint(stack_t **stack, unsigned int line_number)
+{
+	stack_t *ptr = *stack;
+
+	if (ptr == NULL)
+	{
+		dprintf(2, "L%u: can't pint, stack empty\n", line_number);
+		exit(EXIT_FAILURE);
+	}
+	dprintf(1, "%d\n", ptr->n);
+}
