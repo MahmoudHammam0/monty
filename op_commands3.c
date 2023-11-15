@@ -48,3 +48,26 @@ void _pstr(stack_t **stack, unsigned int line_number)
 
 	dprintf(1, "\n");
 }
+
+void _rotl(stack_t **stack, __attribute__((unused)) unsigned int line_number)
+{
+	stack_t *ptr1, *ptr2;
+
+	if ((*stack) == NULL || (*stack)->next == NULL)
+		return;
+	ptr1 = ptr2 = *stack;
+	*stack = (*stack)->next;
+	(*stack)->prev = NULL;
+	if ((*stack)->next == NULL)
+	{
+		(*stack)->next = ptr1;
+		ptr1->next = NULL;
+		ptr1->prev = (*stack);
+		return;
+	}
+	while(ptr2->next != NULL)
+		ptr2 = ptr2->next;
+	ptr2->next = ptr1;
+	ptr1->prev = ptr2;
+	ptr1->next = NULL;
+}
