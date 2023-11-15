@@ -10,17 +10,17 @@ void _pchar(stack_t **stack, unsigned int line_number)
 {
 	if (!stack || !(*stack))
 	{
-		fprintf(stderr, "L%u: can't pchar, stack empty\n", line_number);
+		dprintf(2, "L%u: can't pchar, stack empty\n", line_number);
 		exit(EXIT_FAILURE);
 		return;
 	}
 	if ((*stack)->n > 127 || (*stack)->n < 0)
 	{
-		fprintf(stderr, "L%u: can't pchar, value out of range\n", line_number);
+		dprintf(2, "L%u: can't pchar, value out of range\n", line_number);
 		exit(EXIT_FAILURE);
 		return;
 	}
-	printf("%c\n", (*stack)->n);
+	dprintf(1, "%c\n", (*stack)->n);
 }
 
 /**
@@ -50,19 +50,3 @@ void _pstr(stack_t **stack, unsigned int line_number)
 
 	dprintf(1, "\n");
 }
-/*stack_t *ptr = *stack;
-	int num = ptr->n;
-	char c;
-
-	if (ptr == NULL || stack == NULL)
-	{
-		dprintf(2, "L%u: can't pchar, stack empty\n", line_number);
-		exit(EXIT_FAILURE);
-	}
-	if (num < 0 || num > 127)
-	{
-		dprintf(2, "L%u: can't pchar, value out of range\n", line_number);
-		exit(EXIT_FAILURE);
-	}
-	c = (char)num;
-	dprintf(1, "%c\n", c);*/
