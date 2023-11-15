@@ -26,5 +26,5 @@ void _pchar(stack_t **stack, unsigned int line_number)
 		exit(EXIT_FAILURE);
 	}
 
-	dprintf(1, "%c\n", num);
+	dprintf(1, "%c\n", c);
 }
