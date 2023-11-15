@@ -34,21 +34,21 @@ void _add(stack_t **stack, unsigned int line_number)
  */
 void _sub(stack_t **stack, unsigned int line_number)
 {
-        stack_t *ptr1 = *stack, *ptr2;
-        int num1, num2;
+	stack_t *ptr1 = *stack, *ptr2;
+	int num1, num2;
 
-        if (ptr1 == NULL || ptr1->next == NULL)
-        {
-                dprintf(2, "L%u: can't sub, stack too short\n", line_number);
-                exit(EXIT_FAILURE);
-        }
-        ptr2 = ptr1->next;
-        num1 = ptr1->n;
-        num2 = ptr2->n;
-        ptr2->n = num2 - num1;
-        ptr2->prev = NULL;
-        *stack = ptr2;
-        free(ptr1), ptr1 = NULL;
+	if (ptr1 == NULL || ptr1->next == NULL)
+	{
+		dprintf(2, "L%u: can't sub, stack too short\n", line_number);
+		exit(EXIT_FAILURE);
+	}
+	ptr2 = ptr1->next;
+	num1 = ptr1->n;
+	num2 = ptr2->n;
+	ptr2->n = num2 - num1;
+	ptr2->prev = NULL;
+	*stack = ptr2;
+	free(ptr1), ptr1 = NULL;
 }
 
 /**
@@ -60,26 +60,26 @@ void _sub(stack_t **stack, unsigned int line_number)
  */
 void _div(stack_t **stack, unsigned int line_number)
 {
-        stack_t *ptr1 = *stack, *ptr2;
-        int num1, num2;
+	stack_t *ptr1 = *stack, *ptr2;
+	int num1, num2;
 
-        if (ptr1 == NULL || ptr1->next == NULL)
-        {
-                dprintf(2, "L%u: can't div, stack too short\n", line_number);
-                exit(EXIT_FAILURE);
-        }
-        ptr2 = ptr1->next;
-        num1 = ptr1->n;
-        num2 = ptr2->n;
+	if (ptr1 == NULL || ptr1->next == NULL)
+	{
+		dprintf(2, "L%u: can't div, stack too short\n", line_number);
+		exit(EXIT_FAILURE);
+	}
+	ptr2 = ptr1->next;
+	num1 = ptr1->n;
+	num2 = ptr2->n;
 	if (num1 == 0)
 	{
 		dprintf(2, "L%u: division by zero\n", line_number);
 		exit(EXIT_FAILURE);
 	}
-        ptr2->n = num2 / num1;
-        ptr2->prev = NULL;
-        *stack = ptr2;
-        free(ptr1), ptr1 = NULL;
+	ptr2->n = num2 / num1;
+	ptr2->prev = NULL;
+	*stack = ptr2;
+	free(ptr1), ptr1 = NULL;
 }
 
 /**
@@ -91,21 +91,21 @@ void _div(stack_t **stack, unsigned int line_number)
  */
 void _mul(stack_t **stack, unsigned int line_number)
 {
-        stack_t *ptr1 = *stack, *ptr2;
-        int num1, num2;
+	stack_t *ptr1 = *stack, *ptr2;
+	int num1, num2;
 
-        if (ptr1 == NULL || ptr1->next == NULL)
-        {
-                dprintf(2, "L%u: can't mul, stack too short\n", line_number);
-                exit(EXIT_FAILURE);
-        }
-        ptr2 = ptr1->next;
-        num1 = ptr1->n;
-        num2 = ptr2->n;
-        ptr2->n = num2 * num1;
-        ptr2->prev = NULL;
-        *stack = ptr2;
-        free(ptr1), ptr1 = NULL;
+	if (ptr1 == NULL || ptr1->next == NULL)
+	{
+		dprintf(2, "L%u: can't mul, stack too short\n", line_number);
+		exit(EXIT_FAILURE);
+	}
+	ptr2 = ptr1->next;
+	num1 = ptr1->n;
+	num2 = ptr2->n;
+	ptr2->n = num2 * num1;
+	ptr2->prev = NULL;
+	*stack = ptr2;
+	free(ptr1), ptr1 = NULL;
 }
 
 /**
@@ -117,24 +117,24 @@ void _mul(stack_t **stack, unsigned int line_number)
  */
 void _mod(stack_t **stack, unsigned int line_number)
 {
-        stack_t *ptr1 = *stack, *ptr2;
-        int num1, num2;
+	stack_t *ptr1 = *stack, *ptr2;
+	int num1, num2;
 
-        if (ptr1 == NULL || ptr1->next == NULL)
-        {
-                dprintf(2, "L%u: can't mod, stack too short\n", line_number);
-                exit(EXIT_FAILURE);
-        }
-        ptr2 = ptr1->next;
-        num1 = ptr1->n;
-        num2 = ptr2->n;
+	if (ptr1 == NULL || ptr1->next == NULL)
+	{
+		dprintf(2, "L%u: can't mod, stack too short\n", line_number);
+		exit(EXIT_FAILURE);
+	}
+	ptr2 = ptr1->next;
+	num1 = ptr1->n;
+	num2 = ptr2->n;
 	if (num1 == 0)
 	{
 		dprintf(2, "L%u: division by zero\n", line_number);
 		exit(EXIT_FAILURE);
 	}
-        ptr2->n = num2 % num1;
-        ptr2->prev = NULL;
-        *stack = ptr2;
-        free(ptr1), ptr1 = NULL;
+	ptr2->n = num2 % num1;
+	ptr2->prev = NULL;
+	*stack = ptr2;
+	free(ptr1), ptr1 = NULL;
 }
