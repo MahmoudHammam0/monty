@@ -74,7 +74,7 @@ void _pint(stack_t **stack, unsigned int line_number)
 /**
  * _pop - removes the top element of the stack.
  * @stack: pointer to top of the stack
- * @line_number - number of line to be executed
+ * @line_number: number of line to be executed
  * Return: Nothing
  */
 void _pop(stack_t **stack, unsigned int line_number)
@@ -96,11 +96,17 @@ void _pop(stack_t **stack, unsigned int line_number)
 	free(ptr), ptr = NULL;
 }
 
+/**
+ * _swap - swaps the top two elements of the stack.
+ * @stack: pointer to top of the stack
+ * @line_number: number of the line to be executed
+ * Return: Nothing
+ */
 void _swap(stack_t **stack, unsigned int line_number)
 {
 	stack_t *ptr1 = *stack, *ptr2;
 
-	if (ptr1->next == NULL)
+	if (ptr1 == NULL || ptr1->next == NULL)
 	{
 		dprintf(2, "L%u: can't swap, stack too short\n", line_number);
 		exit(EXIT_FAILURE);
