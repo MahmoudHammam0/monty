@@ -39,6 +39,8 @@ void _pstr(stack_t **stack, unsigned int line_number)
 {
 	stack_t *ptr = *stack;
 
+	(void)line_number;
+
 	if (ptr == NULL)
 	{
 		dprintf(1, "\n");
