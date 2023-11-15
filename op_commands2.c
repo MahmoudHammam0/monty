@@ -39,7 +39,7 @@ void _sub(stack_t **stack, unsigned int line_number)
 
         if (ptr1 == NULL || ptr1->next == NULL)
         {
-                dprintf(2, "L%u: can't add, stack too short\n", line_number);
+                dprintf(2, "L%u: can't sub, stack too short\n", line_number);
                 exit(EXIT_FAILURE);
         }
         ptr2 = ptr1->next;
