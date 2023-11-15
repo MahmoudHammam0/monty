@@ -20,6 +20,7 @@ void execute_command(char *line, stack_t **stack, unsigned int line_number)
 		{"add", _add},
 		{"sub", _sub},
 		{"div", _div},
+		{"mul", _mul},
 		{NULL, NULL}
 	};
 
