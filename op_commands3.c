@@ -12,13 +12,11 @@ void _pchar(stack_t **stack, unsigned int line_number)
 	{
 		dprintf(2, "L%u: can't pchar, stack empty\n", line_number);
 		exit(EXIT_FAILURE);
-		return;
 	}
 	if ((*stack)->n > 127 || (*stack)->n < 0)
 	{
 		dprintf(2, "L%u: can't pchar, value out of range\n", line_number);
 		exit(EXIT_FAILURE);
-		return;
 	}
 	dprintf(1, "%c\n", (*stack)->n);
 }
