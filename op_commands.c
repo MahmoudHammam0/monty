@@ -95,3 +95,22 @@ void _pop(stack_t **stack, unsigned int line_number)
 	}
 	free(ptr), ptr = NULL;
 }
+
+void _swap(stack_t **stack, unsigned int line_number)
+{
+	stack_t *ptr1 = *stack, *ptr2;
+
+	if (ptr1->next == NULL)
+	{
+		dprintf(2, "L%u: can't swap, stack too short\n", line_number);
+		exit(EXIT_FAILURE);
+	}
+	ptr2 = ptr1->next;
+	ptr1->next = ptr2->next;
+	ptr1->prev = ptr2;
+	ptr2->next = ptr1;
+	ptr2->prev = NULL;
+	if (ptr1->next != NULL)
+		ptr1->next->prev = ptr1;
+	*stack = ptr2;
+}
