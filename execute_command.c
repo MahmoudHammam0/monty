@@ -21,8 +21,6 @@ void execute_command(char *line, stack_t **stack, unsigned int line_number)
 		{NULL, NULL}
 	};
 
-	if (line[0] == '#')
-		return;
 	opc = strtok(line, " \t\n");
 	if (opc == NULL || opc[0] == '#' || strcmp(opc, "nop") == 0)
 		return;
