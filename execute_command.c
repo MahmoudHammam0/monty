@@ -18,6 +18,7 @@ void execute_command(char *line, stack_t **stack, unsigned int line_number)
 		{"pop", _pop},
 		{"swap", _swap},
 		{"add", _add},
+		{"sub", _sub},
 		{NULL, NULL}
 	};
 
