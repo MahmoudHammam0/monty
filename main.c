@@ -1,6 +1,7 @@
 #include "monty.h"
 
 char *file_name;
+int queue;
 
 /**
  * _free_stack - frees the stack
@@ -36,13 +37,13 @@ int main(int argc, char *argv[])
 	stack_t *stack = NULL;
 	unsigned int line_number = 1;
 
+	queue = 0;
 	file_name = argv[1];
 	if (argc != 2)
 	{
 		dprintf(2, "USAGE: monty file\n");
 		exit(EXIT_FAILURE);
 	}
-
 	f = fopen(file_name, "r");
 	if (f == NULL)
 	{

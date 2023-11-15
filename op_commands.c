@@ -32,6 +32,8 @@ void _push(stack_t **stack, unsigned int line_number)
 		temp->prev = ptr;
 		*stack = ptr;
 	}
+	if (queue == 1)
+		_queue(stack, line_number);
 }
 
 /**

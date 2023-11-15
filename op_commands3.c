@@ -98,3 +98,16 @@ void _rotr(stack_t **stack, __attribute__((unused)) unsigned int line_number)
 	(*stack)->prev = ptr;
 	*stack = ptr;
 }
+
+/**
+ * _queue - convert mode from stack to queue
+ * @stack: pointer to top of the stack
+ * @line_number: number of line to be executed
+ * Return: Nothing
+ */
+void _queue(stack_t **stack, unsigned int line_number)
+{
+	if ((*stack) == NULL || (*stack)->next == NULL)
+		return;
+	_rotl(stack, line_number);
+}
