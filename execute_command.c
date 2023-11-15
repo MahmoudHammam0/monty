@@ -22,7 +22,7 @@ void execute_command(char *line, stack_t **stack, unsigned int line_number)
 	};
 
 	opc = strtok(line, " \t\n");
-	if (op && op[0] == '#')
+	if (opc && opc[0] == '#')
 		return;
 	if (opc == NULL || strcmp(opc, "nop") == 0)
 		return;
