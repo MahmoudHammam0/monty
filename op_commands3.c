@@ -12,7 +12,7 @@ void _pchar(stack_t **stack, unsigned int line_number)
 	int num = ptr->n;
 	char c;
 
-	if (ptr == NULL)
+	if (ptr == NULL || stack == NULL)
 	{
 		dprintf(2, "L%u: can't pchar, stack empty\n", line_number);
 		exit(EXIT_FAILURE);
