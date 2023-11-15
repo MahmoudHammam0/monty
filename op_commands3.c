@@ -10,7 +10,7 @@ void _pchar(stack_t **stack, unsigned int line_number)
 {
 	stack_t *ptr = *stack;
 	int num = ptr->n;
-	/*char c;*/
+	char c;
 
 	if (ptr == NULL)
 	{
@@ -22,7 +22,7 @@ void _pchar(stack_t **stack, unsigned int line_number)
 		dprintf(2, "L%u: can't pchar, value out of range\n", line_number);
 		exit(EXIT_FAILURE);
 	}
-	/*c = (char)num;*/
+	c = (char)num;
 	dprintf(1, "%c\n", num);
 }
 
