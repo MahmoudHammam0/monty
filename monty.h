@@ -6,8 +6,6 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
-#include <ctype.h>
-#include <stddef.h>
 
 extern char *file_name;
 

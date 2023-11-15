@@ -17,7 +17,7 @@ void _pchar(stack_t **stack, unsigned int line_number)
 		dprintf(2, "L%u: can't pchar, stack empty\n", line_number);
 		exit(EXIT_FAILURE);
 	}
-	if (isascii(ptr->n) == 0)
+	if (num < 0 || num > 0)
 	{
 		dprintf(2, "L%u: can't pchar, value out of range\n", line_number);
 		exit(EXIT_FAILURE);
