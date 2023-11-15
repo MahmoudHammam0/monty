@@ -22,6 +22,8 @@ void execute_command(char *line, stack_t **stack, unsigned int line_number)
 	};
 
 	opc = strtok(line, " \n\t");
+	if (opc[0] == '#')
+		return;
 	if (opc == NULL || strcmp(opc, "nop") == 0)
 		return;
 	for (i = 0; instruction[i].opcode != NULL; i++)
@@ -32,7 +34,7 @@ void execute_command(char *line, stack_t **stack, unsigned int line_number)
 			return;
 		}
 	}
-	if (instruction[i].opcode == NULL && opc && opc[0] != '#')
+	if (instruction[i].opcode == NULL)
 	{
 		dprintf(2, "L%u: unknown instruction %s\n", line_number, opc);
 		exit(EXIT_FAILURE);
