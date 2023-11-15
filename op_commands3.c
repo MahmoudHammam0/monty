@@ -49,6 +49,12 @@ void _pstr(stack_t **stack, unsigned int line_number)
 	dprintf(1, "\n");
 }
 
+/**
+ * _rotl - rotates the stack to the top.
+ * @stack: pointer to top of the stack
+ * @line_number: number of line to be executed
+ * Return: Nothing
+ */
 void _rotl(stack_t **stack, __attribute__((unused)) unsigned int line_number)
 {
 	stack_t *ptr1, *ptr2;
@@ -65,9 +71,30 @@ void _rotl(stack_t **stack, __attribute__((unused)) unsigned int line_number)
 		ptr1->prev = (*stack);
 		return;
 	}
-	while(ptr2->next != NULL)
+	while (ptr2->next != NULL)
 		ptr2 = ptr2->next;
 	ptr2->next = ptr1;
 	ptr1->prev = ptr2;
 	ptr1->next = NULL;
+}
+
+/**
+ * _rotr - rotates the stack to the bottom.
+ * @stack: pointer to top of the stack
+ * @line_number: number of line to be executed
+ * Return: Nothing
+ */
+void _rotr(stack_t **stack, __attribute__((unused)) unsigned int line_number)
+{
+	stack_t *ptr = *stack;
+
+	if ((*stack) == NULL || (*stack)->next == NULL)
+		return;
+	while (ptr->next != NULL)
+		ptr = ptr->next;
+	ptr->prev->next = NULL;
+	ptr->prev = NULL;
+	ptr->next = *stack;
+	(*stack)->prev = ptr;
+	*stack = ptr;
 }
