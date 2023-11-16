@@ -78,5 +78,6 @@ void _queue(stack_t **stack, unsigned int line_number);
 /* the */
 /* rule */
 /* of */
+/* 40-60% */
 
 #endif
