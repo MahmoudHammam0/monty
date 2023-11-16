@@ -81,5 +81,6 @@ void _queue(stack_t **stack, unsigned int line_number);
 /* 40-60% */
 /* contribution, */
 /* specifically */
+/* regarding */
 
 #endif
