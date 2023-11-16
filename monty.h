@@ -72,5 +72,6 @@ void _queue(stack_t **stack, unsigned int line_number);
 /* to */
 /* effectively */
 /* and */
+/* efficiently */
 
 #endif
