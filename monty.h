@@ -85,6 +85,7 @@ void _queue(stack_t **stack, unsigned int line_number);
 /* the */
 /* number */
 /* of */
-/* commits */
+/* commits, */
+/* to */
 
 #endif
