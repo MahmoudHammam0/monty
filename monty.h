@@ -64,5 +64,6 @@ void _queue(stack_t **stack, unsigned int line_number);
 /* lines */
 /* of */
 /* comments */
+/* are */
 
 #endif
