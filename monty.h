@@ -79,5 +79,6 @@ void _queue(stack_t **stack, unsigned int line_number);
 /* rule */
 /* of */
 /* 40-60% */
+/* contribution */
 
 #endif
