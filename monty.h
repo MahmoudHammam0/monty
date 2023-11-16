@@ -65,5 +65,6 @@ void _queue(stack_t **stack, unsigned int line_number);
 /* of */
 /* comments */
 /* are */
+/* strategically */
 
 #endif
