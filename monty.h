@@ -60,35 +60,4 @@ void _rotl(stack_t **stack, unsigned int line_number);
 void _rotr(stack_t **stack, unsigned int line_number);
 void _queue(stack_t **stack, unsigned int line_number);
 
-/* These */
-/* lines */
-/* of */
-/* comments */
-/* are */
-/* strategically */
-/* added */
-/* in */
-/* order */
-/* to */
-/* effectively */
-/* and */
-/* efficiently */
-/* conform */
-/* to */
-/* the */
-/* rule */
-/* of */
-/* 40-60% */
-/* contribution, */
-/* specifically */
-/* regarding */
-/* the */
-/* number */
-/* of */
-/* commits, */
-/* to */
-/* meet */
-/* the */
-/* requirement. */
-
 #endif
